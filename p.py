@@ -1,5 +1,5 @@
 class personaje:
-    nombre = "David"
+    nombre = "Davi"
     fuerza = 0
     inteligencia = 0
     defensa = 0
