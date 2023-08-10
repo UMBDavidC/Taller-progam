@@ -1,5 +1,5 @@
 class personaje:
-    nombre = "john doe"
+    nombre = "David"
     fuerza = 0
     inteligencia = 0
     defensa = 0
