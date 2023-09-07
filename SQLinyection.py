@@ -30,7 +30,7 @@ def index():
     return jsonify({"hello": "SQL inyection test"}) 
 
 @app.route('/products', methods=['GET'])
-#https://insecure-website.com/products?category=Gifts
+#Ejemplo https://insecure-website.com/products?category=Gifts
 #Cambio con or en el url
 #http://127.0.0.1:5000/products?category=gifts%22+or+1=1%23
 #como agregar el # despues del category el la linea 22
