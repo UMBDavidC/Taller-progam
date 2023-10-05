@@ -5,5 +5,5 @@ from django.shortcuts import render
 def inicio(request):
     return render(request,"pages/index.html",{})
 
-def nosotros(request):
-    return render(request,"pages/otro.html",{})
+def Resumen(request):
+    return render(request,"pages/Resumen.html",{})
