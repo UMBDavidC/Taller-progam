@@ -27,7 +27,11 @@
                                         <h2 class="fw-bolder">{{p.nombre}}</h2>
                                         <p>{{p.descripcion}}</p>
                                     </div>
+                                    {% if p.imageproj%}
                                     <img class="img-fluid" src="{{p.imageproj.url}}" alt="..." />
+                                    {%else%}
+                                    <img class="img-fluid" alt="{{p.nombre}}"/>
+                                    {%endif%}
                                 </div>
                             </div>
                         </div>
