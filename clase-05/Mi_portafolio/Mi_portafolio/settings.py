@@ -56,6 +56,14 @@ ROOT_URLCONF = 'Mi_portafolio.urls'
 
 SETTINGS_PATH = os.path.normpath(os.path.dirname(__file__))
 
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_PORT = 587
+EMAIL_USE_TLS = True
+EMAIL_HOST_USER = 'Dcubillos904@gmail.com'
+EMAIL_HOST_PASSWORD = 'saql zhdm cxyt mdop'
+
+
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',

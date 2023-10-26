@@ -14,15 +14,15 @@ def contacto(request):
         obj_contact = Contacto(name=tname,email=temail,phone=tphone,message=tmessage)
         obj_contact.save()
         #return HttpResponse("EL registro fue ingresado")
-        #email(obj_contact)
+        send_email(obj_contact)
         return render(request,"pages/gracias.html",)
 
     return render(request,"pages/contacto.html",)
 
-def email(email):
+def send_email(email):
     subject = 'Thank you for contact me'
-    message = ' it  means a world to us '
+    message = ' si pude hacer que una pagina mande correos por mi perra vida'
     email_from = settings.EMAIL_HOST_USER
-    recipient_list = ['dcubillos1003@gmail.com',]
-    send_mail( subject, message, email_from, recipient_list )
+    recipient_list = [email.email,]
+    send_mail(subject=subject, message=message, from_email=email_from, recipient_list=recipient_list)
     return True
