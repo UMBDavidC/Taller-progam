@@ -24,10 +24,12 @@ from django.conf import settings
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path("",inicio),
-    path('inicio/', inicio),
-    path('resumen/', resumen),
-    path("",include('Aplicaciones.proyectos.urls')),
+    path("",inicio, name="inicio"),
+    path('inicio/', inicio, name="inicio"),
+    path('resumen/', resumen, name="resumen"),
+    path("accounts/", include('django.contrib.auth.urls')),
+    path("",include('Aplicaciones.proyectos.urls'),),
     path("",include('Aplicaciones.contacto.urls')),
+    path("",include('Aplicaciones.ubicaciones.urls') ),
     re_path(r'^media/(?P<path>.*)$', serve, {'document_root': settings.MEDIA_ROOT})
 ]
