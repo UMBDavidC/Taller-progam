@@ -21,7 +21,7 @@ def contacto(request):
 
 def send_email(email):
     subject = 'Thank you for contact me'
-    message = ' si pude hacer que una pagina mande correos por mi perra vida'
+    message = ' Gracias por ser parte de esta familia'
     email_from = settings.EMAIL_HOST_USER
     recipient_list = [email.email,]
     send_mail(subject=subject, message=message, from_email=email_from, recipient_list=recipient_list)

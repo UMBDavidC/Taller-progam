@@ -1,0 +1,32 @@
+{% extends "layouts/base.html" %}
+
+{% load static %}
+
+{% block title %}Reseñas{% endblock %}
+
+{% block content %}
+
+
+<!-- Submit Button-->
+<div class="d-grid"><a href="{% url 'agregar_testimonio' %}">Ir a la Nueva Página</a>
+
+</div>
+
+{% for p in testimonios %}
+
+
+<!-- Project Card -->
+<div class="card overflow-hidden shadow rounded-4 border-0 mb-5">
+    <div class="card-body p-0">
+        <div class="d-flex align-items-center">
+            <div class="p-5">
+                <p>{{p.date}}</p>
+                <h2 class="fw-bolder">{{p.nombre}}</h2>
+                <p>{{p.testimonio}}</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endfor %}
+{% endblock %}
