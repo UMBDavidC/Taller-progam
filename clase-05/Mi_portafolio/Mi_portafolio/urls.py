@@ -17,6 +17,7 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include,re_path
 from .views import inicio, resumen
+from rest_framework.documentation import include_docs_urls
 
 
 from django.views.static import serve
@@ -32,5 +33,7 @@ urlpatterns = [
     path("",include('Aplicaciones.contacto.urls')),
     path("",include('Aplicaciones.ubicaciones.urls') ),
     path("",include('Aplicaciones.testimonios.urls') ),
+    path("api/v1/", include('Aplicaciones.directorio.urls')),  
+    path("docs/", include_docs_urls(title='Api Documentation')),
     re_path(r'^media/(?P<path>.*)$', serve, {'document_root': settings.MEDIA_ROOT})
 ]
