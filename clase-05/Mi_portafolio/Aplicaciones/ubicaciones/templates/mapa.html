@@ -5,14 +5,26 @@
 {% block title %}Sitios de Interes{% endblock %}
 
 {% block content %}
- 
-    <h2>Mapa</h2>
-    {{ map|safe }}
-    <hr>
-    <ul>
-        {% for loc in locations %}
-            <li>{{ loc.name }} ( {{ loc.address }} )</li>
-        {% endfor %}
-    </ul>
-
+    <div class="container">
+        <div class="row">
+            <div class="col-md-8">
+                <h2>Mapa</h2>
+                <div class="map-container">
+                    {{ map|safe }}
+                </div>
+                <hr>
+            </div>
+            <div class="container col-md-4">
+                <h2>Ubicaciones</h2>
+                <ul class="list-group">
+                    {% for loc in locations %}
+                        <li class="list-group-item">
+                            <h2>{{loc.name}}</h2>
+                            {{ loc.address }}
+                        </li>
+                    {% endfor %}
+                </ul>
+            </div>
+        </div>
+    </div>
 {% endblock %}
