@@ -16,7 +16,7 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include,re_path
-from .views import inicio, resumen
+from .views import inicio, resumen,terminos,privacidad
 from rest_framework.documentation import include_docs_urls
 
 
@@ -28,6 +28,8 @@ urlpatterns = [
     path("",inicio, name="inicio"),
     path('inicio/', inicio, name="inicio"),
     path('resumen/', resumen, name="resumen"),
+    path('terminos/', terminos, name="terminos"),
+    path('privacidad/', privacidad, name="privacidad"),
     path("accounts/", include('django.contrib.auth.urls')),
     path("",include('Aplicaciones.proyectos.urls'),),
     path("",include('Aplicaciones.contacto.urls')),
